@@ -1,4 +1,5 @@
 import { Section, LinkItem } from '../../components/DocBlocks'
+import VacancyFeed from './VacancyFeed'
 
 export default function AggregatorPage() {
   return (
@@ -26,6 +27,8 @@ export default function AggregatorPage() {
           <li>Разные каналы дают разную полноту: proglib_jobs — стек/требования прямо в посте; evacuatejobs — только тайтл+компания+ссылка, стек нужно тянуть по ссылке отдельным запросом.</li>
         </ul>
       </Section>
+
+      <VacancyFeed />
 
       <Section title="Источник — Telegram">
         <p>
