@@ -11,8 +11,16 @@
     "location": "Москва",
     "remote": false,
     "category": "devops",
-    "stack": ["VictoriaMetrics", "Prometheus", "Grafana", "Zabbix", "Python"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "VictoriaMetrics",
+      "Prometheus",
+      "Grafana",
+      "Zabbix",
+      "Python"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "DevOps",
+    "language": "Python"
   },
   {
     "id": "proglib_jobs/1068",
@@ -26,8 +34,17 @@
     "location": "Москва",
     "remote": true,
     "category": "mobile",
-    "stack": ["C/C++", "Android NDK", "JNI", "Java", "Kotlin", "WebRTC"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "C/C++",
+      "Android NDK",
+      "JNI",
+      "Java",
+      "Kotlin",
+      "WebRTC"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "Mobile",
+    "language": "Kotlin"
   },
   {
     "id": "proglib_jobs/1069",
@@ -41,8 +58,14 @@
     "location": null,
     "remote": true,
     "category": "javascript",
-    "stack": ["ES6", "TypeScript", "React"],
-    "apply_via": "hirehi.ru"
+    "stack": [
+      "ES6",
+      "TypeScript",
+      "React"
+    ],
+    "apply_via": "hirehi.ru",
+    "role": "Frontend",
+    "language": "TypeScript"
   },
   {
     "id": "proglib_jobs/1070",
@@ -56,8 +79,18 @@
     "location": "Амстердам",
     "remote": false,
     "category": "python",
-    "stack": ["Python", "Pandas", "Django", "Flask", "SQL", "NoSQL", "CI/CD"],
-    "apply_via": "hirehi.ru"
+    "stack": [
+      "Python",
+      "Pandas",
+      "Django",
+      "Flask",
+      "SQL",
+      "NoSQL",
+      "CI/CD"
+    ],
+    "apply_via": "hirehi.ru",
+    "role": "Backend",
+    "language": "Python"
   },
   {
     "id": "proglib_jobs/1071",
@@ -71,8 +104,14 @@
     "location": "Москва",
     "remote": false,
     "category": "data",
-    "stack": ["PyTorch", "Deep Learning", "Audio processing"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "PyTorch",
+      "Deep Learning",
+      "Audio processing"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "Data",
+    "language": "Python"
   },
   {
     "id": "proglib_jobs/1072",
@@ -86,8 +125,18 @@
     "location": null,
     "remote": true,
     "category": "java",
-    "stack": ["Java 11+", "Kotlin", "Spring Boot", "Kubernetes", "Docker", "Kafka", "PostgreSQL"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "Java 11+",
+      "Kotlin",
+      "Spring Boot",
+      "Kubernetes",
+      "Docker",
+      "Kafka",
+      "PostgreSQL"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "Backend",
+    "language": "Java"
   },
   {
     "id": "proglib_jobs/1073",
@@ -101,8 +150,14 @@
     "location": "Астана",
     "remote": false,
     "category": "go",
-    "stack": ["Go", "REST API", "PostgreSQL"],
-    "apply_via": "hh.ru"
+    "stack": [
+      "Go",
+      "REST API",
+      "PostgreSQL"
+    ],
+    "apply_via": "hh.ru",
+    "role": "Backend",
+    "language": "Go"
   },
   {
     "id": "proglib_jobs/1074",
@@ -116,8 +171,17 @@
     "location": "Астана",
     "remote": true,
     "category": "php",
-    "stack": ["PHP 7+", "HTML/CSS", "JavaScript", "jQuery", "SQL", "Laravel"],
-    "apply_via": "hh.ru"
+    "stack": [
+      "PHP 7+",
+      "HTML/CSS",
+      "JavaScript",
+      "jQuery",
+      "SQL",
+      "Laravel"
+    ],
+    "apply_via": "hh.ru",
+    "role": "Fullstack",
+    "language": "PHP"
   },
   {
     "id": "proglib_jobs/1075",
@@ -131,8 +195,13 @@
     "location": "Лимассол (relocation support)",
     "remote": false,
     "category": "qa",
-    "stack": ["SQL", "REST API"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "SQL",
+      "REST API"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "QA",
+    "language": null
   },
   {
     "id": "proglib_jobs/1076",
@@ -146,8 +215,14 @@
     "location": "Новосибирск",
     "remote": true,
     "category": "php",
-    "stack": ["PHP", "Symfony", "SQL"],
-    "apply_via": "hh.ru"
+    "stack": [
+      "PHP",
+      "Symfony",
+      "SQL"
+    ],
+    "apply_via": "hh.ru",
+    "role": "Backend",
+    "language": "PHP"
   },
   {
     "id": "proglib_jobs/1077",
@@ -161,8 +236,17 @@
     "location": "Москва",
     "remote": true,
     "category": "javascript",
-    "stack": ["Node.js", "TypeScript", "JavaScript", "Nest.js", "Express", "Fastify"],
-    "apply_via": "getmatch.ru"
+    "stack": [
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "Nest.js",
+      "Express",
+      "Fastify"
+    ],
+    "apply_via": "getmatch.ru",
+    "role": "Backend",
+    "language": "TypeScript"
   },
   {
     "id": "proglib_jobs/1080",
@@ -176,8 +260,14 @@
     "location": "Мадрид",
     "remote": true,
     "category": "java",
-    "stack": ["Java", "Spring Boot", "REST API"],
-    "apply_via": "career.habr.com"
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "REST API"
+    ],
+    "apply_via": "career.habr.com",
+    "role": "Backend",
+    "language": "Java"
   },
   {
     "id": "proglib_jobs/1081",
@@ -191,8 +281,15 @@
     "location": "Москва",
     "remote": true,
     "category": "go",
-    "stack": ["Go", "Python", "алгоритмы", "структуры данных"],
-    "apply_via": "career.habr.com"
+    "stack": [
+      "Go",
+      "Python",
+      "алгоритмы",
+      "структуры данных"
+    ],
+    "apply_via": "career.habr.com",
+    "role": "DevOps",
+    "language": "Go"
   },
   {
     "id": "proglib_jobs/1084",
@@ -206,8 +303,21 @@
     "location": "Москва",
     "remote": true,
     "category": "mobile",
-    "stack": ["Kotlin", "Coroutines", "Flow", "Jetpack Compose", "MVVM", "MVI", "Dagger 2", "Hilt", "Retrofit", "OkHttp"],
-    "apply_via": "hh.ru"
+    "stack": [
+      "Kotlin",
+      "Coroutines",
+      "Flow",
+      "Jetpack Compose",
+      "MVVM",
+      "MVI",
+      "Dagger 2",
+      "Hilt",
+      "Retrofit",
+      "OkHttp"
+    ],
+    "apply_via": "hh.ru",
+    "role": "Mobile",
+    "language": "Kotlin"
   },
   {
     "id": "evacuatejobs/kodland-python",
@@ -223,6 +333,8 @@
     "category": "python",
     "stack": null,
     "needs_jd_fetch": true,
-    "apply_via": "remocate.app"
+    "apply_via": "remocate.app",
+    "role": "Backend",
+    "language": "Python"
   }
 ]
