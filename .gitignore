@@ -17,6 +17,15 @@ scraper/.venv
 scraper/__pycache__
 *.pyc
 
+# Python backend
+backend/.venv
+backend/__pycache__
+backend/**/__pycache__
+backend/.pytest_cache
+backend/*.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
