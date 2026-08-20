@@ -26,6 +26,11 @@ const modules = [
     title: 'Пайплайн',
     description: 'Как модули соединяются в один сквозной поток.',
   },
+  {
+    to: '/blog',
+    title: 'Блог',
+    description: 'Версии и обновления — что реально вышло.',
+  },
 ]
 
 export default function HomePage() {

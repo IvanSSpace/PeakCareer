@@ -6,6 +6,7 @@ import ResumePage from './modules/resume/ResumePage'
 import LearningPage from './modules/learning/LearningPage'
 import SetupPage from './modules/setup/SetupPage'
 import PipelinePage from './modules/pipeline/PipelinePage'
+import BlogPage from './modules/blog/BlogPage'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/learning" element={<LearningPage />} />
         <Route path="/setup" element={<SetupPage />} />
         <Route path="/pipeline" element={<PipelinePage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </div>
   )
