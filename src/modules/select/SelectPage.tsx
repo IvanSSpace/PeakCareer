@@ -68,7 +68,7 @@ export default function SelectPage() {
       <div className="mx-auto max-w-6xl px-6 pt-6 pb-24">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[280px_1fr]">
           {/* Резюме */}
-          <aside className="space-y-3">
+          <aside className="sticky top-[116px] h-fit space-y-3">
             <h2
               className="text-xs font-semibold tracking-wide text-neutral-400 uppercase"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}

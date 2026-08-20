@@ -12,15 +12,19 @@ export default function VacancyRow({
   onToggle?: (id: string) => void
 }) {
   return (
-    <li className="group fade-in-row py-5" style={{ animationDelay: `${i * 30}ms` }}>
+    <li
+      onClick={onToggle ? () => onToggle(v.id) : undefined}
+      className={`group fade-in-row py-5 ${onToggle ? 'cursor-pointer rounded-lg px-3 -mx-3 transition hover:bg-neutral-50' : ''}`}
+      style={{ animationDelay: `${i * 30}ms` }}
+    >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex min-w-0 flex-1 gap-3">
           {onToggle && (
             <input
               type="checkbox"
               checked={!!selected}
-              onChange={() => onToggle(v.id)}
-              className="mt-1.5 h-4 w-4 shrink-0 cursor-pointer accent-neutral-900"
+              readOnly
+              className="pointer-events-none mt-1.5 h-4 w-4 shrink-0 accent-neutral-900"
             />
           )}
           <div className="min-w-0 flex-1">
@@ -70,6 +74,7 @@ export default function VacancyRow({
             href={v.url}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="text-xs text-neutral-400 underline decoration-neutral-300 underline-offset-2 opacity-0 transition group-hover:opacity-100 hover:text-neutral-900 hover:decoration-neutral-900"
           >
             {v.source_channel} →
