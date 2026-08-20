@@ -336,5 +336,142 @@
     "apply_via": "remocate.app",
     "role": "Backend",
     "language": "Python"
+  },
+  {
+    "id": "djinni/solution-architect-seedium",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Solution Architect",
+    "company": "Seedium",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Европа/Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "Next.js",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Java"
+  },
+  {
+    "id": "djinni/software-architect-net-globallogic",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Software Architect (.NET)",
+    "company": "GlobalLogic",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "C#",
+      ".NET",
+      "AWS",
+      "Azure",
+      "Docker",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "C#"
+  },
+  {
+    "id": "djinni/solution-architect-java-react-zentixsoft",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Solution Architect (Java+React)",
+    "company": "ZentixSoft",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Европа/Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "Redis",
+      "ActiveMQ",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Java"
+  },
+  {
+    "id": "djinni/ai-architect-ascendix",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "AI Architect",
+    "company": "Ascendix Technologies",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "EU",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "LLM",
+      "RAG",
+      "AI agents",
+      "backend architecture"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Python"
+  },
+  {
+    "id": "djinni/platform-sre-architect-climission",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Platform / SRE Architect",
+    "company": "Climission",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Worldwide",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Kubernetes",
+      "MongoDB",
+      "Azure",
+      "multi-tenant SaaS"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": null
+  },
+  {
+    "id": "djinni/system-architect-pwc",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "System Architect",
+    "company": "PwC Lviv SDC",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      ".NET",
+      "Java",
+      "Python",
+      "реляционные БД"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": null
   }
 ]

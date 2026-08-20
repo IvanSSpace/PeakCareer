@@ -13,9 +13,11 @@ export default function AggregatorPage() {
         <p>
           Скрапер (<code className="rounded bg-neutral-100 px-1">scraper/fetch_telegram.py</code>)
           реально стянул 60 постов с трёх живых каналов (proglib_jobs, evacuatejobs,
-          it_vakansii_jobs). 15 вакансий вручную размечены в структурированный JSON
+          it_vakansii_jobs). Плюс 6 архитектурных вакансий с Djinni (keyword-поиск «architect»).
+          21 вакансия вручную размечена в структурированный JSON
           (<code className="rounded bg-neutral-100 px-1">data/vacancies.json</code>) — весь путь
-          скрапинг → структура подтверждён на реальных данных.
+          скрапинг → структура подтверждён на реальных данных, включая источники без готового
+          API-фильтра под роль.
         </p>
         <p>
           Экстракция сейчас — ручная (свой Claude Code, без отдельного API-ключа). Реальный

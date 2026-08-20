@@ -21,7 +21,7 @@ type Vacancy = {
 
 const vacancies = vacanciesRaw as Vacancy[]
 
-const ROLE_ORDER = ['DevOps', 'Fullstack', 'Frontend', 'Backend', 'Mobile', 'Data', 'QA']
+const ROLE_ORDER = ['DevOps', 'Architect', 'Fullstack', 'Frontend', 'Backend', 'Mobile', 'Data', 'QA']
 
 const CURRENCY_SYMBOL: Record<string, string> = { RUB: '₽', USD: '$', EUR: '€' }
 
@@ -127,7 +127,7 @@ export default function VacancyFeed() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
-          60 постов · 15 вакансий · 3 канала
+          60 постов · 21 вакансия · 3 канала + Djinni
         </div>
       </div>
 
