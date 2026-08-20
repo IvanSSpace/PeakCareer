@@ -3,11 +3,11 @@ import { Section, LinkItem, PlanBanner } from '../../components/DocBlocks'
 export default function AggregatorPlanPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+      <PlanBanner to="/aggregator" kind="to-real" />
       <h1 className="text-3xl font-semibold text-neutral-900">Агрегатор вакансий — план</h1>
       <p className="mt-3 text-neutral-500">
         Собирает вакансии из разных источников по IT-специализациям. Приоритет №1 в разработке.
       </p>
-      <PlanBanner to="/aggregator" kind="to-real" />
 
       <Section title="Статус: первый спайк готов">
         <p>

@@ -3,9 +3,9 @@ import { Section, LinkItem, Step, PlanBanner } from '../../components/DocBlocks'
 export default function ResumePlanPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+      <PlanBanner to="/resume" kind="to-real" />
       <h1 className="text-3xl font-semibold text-neutral-900">Редактор резюме — план</h1>
       <p className="mt-3 text-neutral-500">Адаптирует резюме под конкретную вакансию.</p>
-      <PlanBanner to="/resume" kind="to-real" />
 
       <Section title="Путь пользователя">
         <ol className="space-y-4">

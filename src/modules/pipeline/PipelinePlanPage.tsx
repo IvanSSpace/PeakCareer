@@ -3,11 +3,11 @@ import { Section, LinkItem, Step, PlanBanner } from '../../components/DocBlocks'
 export default function PipelinePlanPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+      <PlanBanner to="/pipeline" kind="to-real" />
       <h1 className="text-3xl font-semibold text-neutral-900">Пайплайн — архитектура</h1>
       <p className="mt-3 text-neutral-500">
         Как модули соединяются в один сквозной поток и архитектура кабинета.
       </p>
-      <PlanBanner to="/pipeline" kind="to-real" />
 
       <Section title="Сквозной поток">
         <ol className="space-y-4">

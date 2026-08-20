@@ -4,7 +4,7 @@ export function PlanBanner({ to, kind }: { to: string; kind: 'to-plan' | 'to-rea
   return (
     <Link
       to={to}
-      className="mx-auto mt-8 inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-500 transition hover:border-neutral-400 hover:text-neutral-900"
+      className="mx-auto mb-6 inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-500 transition hover:border-neutral-400 hover:text-neutral-900"
     >
       {kind === 'to-plan' ? 'план и архитектура →' : '← к реализованному блоку'}
     </Link>

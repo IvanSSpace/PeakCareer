@@ -14,7 +14,7 @@ import BlogPage from './modules/blog/BlogPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F1F1EB]">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

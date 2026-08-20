@@ -3,12 +3,12 @@ import { Section, LinkItem, PlanBanner } from '../../components/DocBlocks'
 export default function LearningPlanPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+      <PlanBanner to="/learning" kind="to-real" />
       <h1 className="text-3xl font-semibold text-neutral-900">Обучение — план</h1>
       <p className="mt-3 text-neutral-500">
         Навык самообучения критичен в профессии — особенно сейчас, когда часть кода пишет ИИ.
         Первое направление: front, back, full stack.
       </p>
-      <PlanBanner to="/learning" kind="to-real" />
 
       <Section title="Формат (видение, не MVP)">
         <p>
