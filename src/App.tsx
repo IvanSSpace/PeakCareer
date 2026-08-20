@@ -11,6 +11,7 @@ import SetupPage from './modules/setup/SetupPage'
 import PipelinePage from './modules/pipeline/PipelinePage'
 import PipelinePlanPage from './modules/pipeline/PipelinePlanPage'
 import BlogPage from './modules/blog/BlogPage'
+import SelectPage from './modules/select/SelectPage'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/pipeline" element={<PipelinePage />} />
         <Route path="/pipeline-plan" element={<PipelinePlanPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/select" element={<SelectPage />} />
       </Routes>
     </div>
   )

@@ -1,100 +1,6 @@
 import { useMemo, useState } from 'react'
-import vacanciesRaw from './vacancies.sample.json'
-
-type Vacancy = {
-  id: string
-  url: string
-  source_channel: string
-  title: string
-  company: string
-  salary_min: number | null
-  salary_max: number | null
-  currency: 'RUB' | 'USD' | 'EUR' | null
-  location: string | null
-  remote: boolean
-  category: string
-  stack: string[] | null
-  apply_via: string
-  role: string
-  language: string | null
-}
-
-const vacancies = vacanciesRaw as Vacancy[]
-
-const ROLE_ORDER = ['DevOps', 'Architect', 'Fullstack', 'Frontend', 'Backend', 'Mobile', 'Data', 'QA']
-
-const CURRENCY_SYMBOL: Record<string, string> = { RUB: '₽', USD: '$', EUR: '€' }
-
-function formatSalary(v: Vacancy): string {
-  if (v.salary_min == null && v.salary_max == null) return '— не указана —'
-  const sym = v.currency ? CURRENCY_SYMBOL[v.currency] ?? v.currency : ''
-  const fmt = (n: number) => n.toLocaleString('ru-RU')
-  if (v.salary_min != null && v.salary_max != null) {
-    return `${fmt(v.salary_min)}–${fmt(v.salary_max)} ${sym}`
-  }
-  const only = v.salary_min ?? v.salary_max!
-  return `от ${fmt(only)} ${sym}`
-}
-
-function VacancyRow({ v, i }: { v: Vacancy; i: number }) {
-  return (
-    <li className="group fade-in-row py-5" style={{ animationDelay: `${i * 30}ms` }}>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="font-medium text-neutral-900">{v.title}</h3>
-            {v.remote && (
-              <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
-                remote
-              </span>
-            )}
-            {v.language && (
-              <span
-                className="rounded-full border border-neutral-200 px-2 py-0.5 text-[11px] text-neutral-500"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                {v.language}
-              </span>
-            )}
-          </div>
-          <p className="mt-0.5 text-sm text-neutral-500">
-            {v.company}
-            {v.location ? ` · ${v.location}` : ''}
-          </p>
-          {v.stack && v.stack.length > 0 && (
-            <div className="mt-2 flex flex-wrap gap-1.5" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-              {v.stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded border border-neutral-200 bg-neutral-50 px-1.5 py-0.5 text-[11px] text-neutral-600"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="flex shrink-0 flex-col items-start gap-1 sm:items-end">
-          <span
-            className="text-sm font-medium text-neutral-900"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            {formatSalary(v)}
-          </span>
-          <a
-            href={v.url}
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs text-neutral-400 underline decoration-neutral-300 underline-offset-2 opacity-0 transition group-hover:opacity-100 hover:text-neutral-900 hover:decoration-neutral-900"
-          >
-            {v.source_channel} →
-          </a>
-        </div>
-      </div>
-    </li>
-  )
-}
+import { vacancies, ROLE_ORDER } from './vacancy'
+import VacancyRow from './VacancyRow'
 
 export default function VacancyFeed() {
   const roles = useMemo(() => {
@@ -105,7 +11,7 @@ export default function VacancyFeed() {
 
   const grouped = useMemo(() => {
     const pool = active === 'все' ? vacancies : vacancies.filter((v) => v.role === active)
-    const byRole = new Map<string, Vacancy[]>()
+    const byRole = new Map<string, typeof vacancies>()
     for (const v of pool) {
       if (!byRole.has(v.role)) byRole.set(v.role, [])
       byRole.get(v.role)!.push(v)
