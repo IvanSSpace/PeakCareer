@@ -2,26 +2,20 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { vacancies, ROLE_ORDER } from '../aggregator/vacancy'
 import VacancyRow from '../aggregator/VacancyRow'
+import { loadResumes, type StoredResume } from '../pipeline/resumeStore'
 
-const RESUME_KEY = 'peakcareer:resume'
 const MAX_SELECTED = 10
 
-type StoredResume = { name: string; size: number; uploadedAt: string }
-
 export default function SelectPage() {
-  const [resume, setResume] = useState<StoredResume | null>(null)
+  const [resumes, setResumes] = useState<StoredResume[]>([])
+  const [activeResumeId, setActiveResumeId] = useState<string | null>(null)
   const [roleFilter, setRoleFilter] = useState('все')
   const [selected, setSelected] = useState<Set<string>>(new Set())
 
   useEffect(() => {
-    const raw = localStorage.getItem(RESUME_KEY)
-    if (raw) {
-      try {
-        setResume(JSON.parse(raw))
-      } catch {
-        /* ignore corrupt entry */
-      }
-    }
+    const loaded = loadResumes()
+    setResumes(loaded)
+    setActiveResumeId(loaded[0]?.id ?? null)
   }, [])
 
   const roles = useMemo(() => {
@@ -75,11 +69,29 @@ export default function SelectPage() {
             >
               Резюме
             </h2>
-            {resume ? (
-              <div className="rounded-xl border border-neutral-900 bg-white/60 p-4">
-                <p className="truncate text-sm font-medium text-neutral-900">{resume.name}</p>
-                <p className="mt-0.5 text-xs text-neutral-500">загружено {resume.uploadedAt}</p>
-              </div>
+            {resumes.length > 0 ? (
+              <>
+                {resumes.map((r) => (
+                  <button
+                    key={r.id}
+                    onClick={() => setActiveResumeId(r.id)}
+                    className={`block w-full rounded-xl border p-4 text-left transition ${
+                      activeResumeId === r.id
+                        ? 'border-neutral-900 bg-white/60'
+                        : 'border-neutral-200 bg-white/30 hover:border-neutral-400'
+                    }`}
+                  >
+                    <p className="truncate text-sm font-medium text-neutral-900">{r.name}</p>
+                    <p className="mt-0.5 text-xs text-neutral-500">загружено {r.uploadedAt}</p>
+                  </button>
+                ))}
+                <Link
+                  to="/pipeline"
+                  className="block text-center text-xs text-neutral-400 underline decoration-neutral-300 underline-offset-2 hover:text-neutral-900 hover:decoration-neutral-900"
+                >
+                  управлять резюме →
+                </Link>
+              </>
             ) : (
               <Link
                 to="/pipeline"
