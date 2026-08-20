@@ -45,16 +45,9 @@ export default function SelectPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto max-w-6xl px-6 py-10">
-        <h1 className="text-2xl text-neutral-900" style={{ fontFamily: "'Fraunces', serif", fontWeight: 600 }}>
-          Подбор
-        </h1>
-        <p className="mt-1 text-sm text-neutral-500">
-          Выбери резюме и до {MAX_SELECTED} вакансий — дальше генерация таргетных резюме (пока не реализована).
-        </p>
-
-        {/* Фильтры */}
-        <div className="mt-6 flex flex-wrap gap-2 rounded-xl border border-neutral-200 bg-white/60 p-4">
+      {/* Фильтры — липкие, сразу под шапкой */}
+      <div className="sticky top-16 z-20 border-b border-neutral-200 bg-[#F1F1EB]">
+        <div className="mx-auto flex max-w-6xl flex-wrap gap-2 px-6 py-3">
           {roles.map((r) => (
             <button
               key={r}
@@ -70,8 +63,10 @@ export default function SelectPage() {
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[280px_1fr]">
+      <div className="mx-auto max-w-6xl px-6 pt-6 pb-24">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[280px_1fr]">
           {/* Резюме */}
           <aside className="space-y-3">
             <h2
@@ -106,18 +101,24 @@ export default function SelectPage() {
         </div>
       </div>
 
-      {/* Плашка выбора */}
-      <div className="sticky bottom-0 border-t border-neutral-200 bg-[#F1F1EB]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span
-            className="text-sm text-neutral-600"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            {selected.size}/{MAX_SELECTED} выбрано
-          </span>
+      {/* Прогресс выбора */}
+      <div className="sticky bottom-0 z-20 border-t border-neutral-200 bg-[#F1F1EB]">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-6 py-4">
+          <div className="w-48 shrink-0">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-200">
+              <div
+                className="h-full rounded-full bg-neutral-900 transition-all"
+                style={{ width: `${(selected.size / MAX_SELECTED) * 100}%` }}
+              />
+            </div>
+            <p className="mt-1 text-xs text-neutral-500" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              {selected.size} из {MAX_SELECTED}
+            </p>
+          </div>
+          <div className="flex-1" />
           <button
             disabled
-            className="cursor-not-allowed rounded-full bg-neutral-300 px-5 py-2 text-sm font-medium text-neutral-500"
+            className="shrink-0 cursor-not-allowed rounded-full bg-neutral-300 px-5 py-2 text-sm font-medium text-neutral-500"
           >
             Сгенерировать резюме — скоро
           </button>

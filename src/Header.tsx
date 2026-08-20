@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <header className="border-b border-neutral-200">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-30 h-16 border-b border-neutral-200 bg-[#F1F1EB]">
+      <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-6">
         <Link to="/" className="text-lg font-semibold text-neutral-900">
           PeakCareer
         </Link>
