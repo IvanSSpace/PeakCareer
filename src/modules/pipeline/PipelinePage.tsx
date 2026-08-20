@@ -1,5 +1,6 @@
 import { PlanBanner, Step } from '../../components/DocBlocks'
 import CabinetBoard from './CabinetBoard'
+import ResumeUpload from './ResumeUpload'
 
 export default function PipelinePage() {
   return (
@@ -11,11 +12,13 @@ export default function PipelinePage() {
       </p>
 
       <ol className="mt-10 space-y-4 border-t border-neutral-200 pt-8 text-left">
-        <Step n={1} title="Загрузи резюме">В агрегаторе/кабинете — PDF/DOCX, разбирается в профиль.</Step>
+        <Step n={1} title="Загрузи резюме">PDF/DOCX ниже — уже работает. Разбор в профиль — позже, с бэкендом.</Step>
         <Step n={2} title="Выбери вакансии">До ~10 за раз, чекбоксами на фиде агрегатора.</Step>
         <Step n={3} title="Получи 10 таргетных резюме">Генерятся батчем под каждую вакансию — попадают сюда.</Step>
         <Step n={4} title="Откликнись сам, отметь тут">Никакой автоотправки — только ручная отметка статуса.</Step>
       </ol>
+
+      <ResumeUpload />
 
       <CabinetBoard />
     </div>
