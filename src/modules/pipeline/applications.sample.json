@@ -1,0 +1,44 @@
+[
+  {
+    "id": "app-1",
+    "vacancy_title": "SRE-инженер (Команда системы мониторинга HR-платформы)",
+    "company": "Сбербанк",
+    "status": "ready",
+    "created_at": "2026-08-18"
+  },
+  {
+    "id": "app-2",
+    "vacancy_title": "Senior JavaScript Developer",
+    "company": "Centicore",
+    "status": "applied",
+    "created_at": "2026-08-17"
+  },
+  {
+    "id": "app-3",
+    "vacancy_title": "Middle Python",
+    "company": "YoungCapital NEXT",
+    "status": "applied",
+    "created_at": "2026-08-17"
+  },
+  {
+    "id": "app-4",
+    "vacancy_title": "Solution Architect",
+    "company": "Seedium",
+    "status": "draft",
+    "created_at": "2026-08-19"
+  },
+  {
+    "id": "app-5",
+    "vacancy_title": "TypeScript Developer",
+    "company": "Лаборатория Современных Цифровых Технологий",
+    "status": "rejected",
+    "created_at": "2026-08-14"
+  },
+  {
+    "id": "app-6",
+    "vacancy_title": "Java-разработчик",
+    "company": "Т-Банк",
+    "status": "offer",
+    "created_at": "2026-08-10"
+  }
+]
