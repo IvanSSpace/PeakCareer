@@ -64,6 +64,21 @@ export default function LearningPage() {
           <LinkItem href="https://www.veracode.com/blog/2026-genai-code-security-report-ai-risk/" label="Veracode 2026 GenAI Code Security Report" />
         </ul>
       </Section>
+
+      <Section title="Трек 3 — System Design">
+        <p>
+          Отдельный skill track, не роль целиком: распределённые системы, масштабирование,
+          БД/кэши/LB/CDN/очереди, архитектурные trade-offs. Актуален и растёт спрос на роли
+          Architect/Staff+ на международном рынке (см. модуль «Агрегатор»).
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <LinkItem href="https://roadmap.sh/system-design" label="roadmap.sh — System Design (дерево навыков)" />
+          <LinkItem
+            href="https://github.com/donnemartin/system-design-primer"
+            label="donnemartin/system-design-primer — 352k★, curriculum + интервью-кейсы + Anki-флешкарты"
+          />
+        </ul>
+      </Section>
     </div>
   )
 }

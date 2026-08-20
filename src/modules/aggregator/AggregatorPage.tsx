@@ -69,6 +69,17 @@ export default function AggregatorPage() {
           <LinkItem href="https://habr.com/ru/articles/1021472" label="Habr — сборник 200+ русскоязычных компаний на международке" />
           <LinkItem href="https://career.habr.com" label="career.habr.com — директория компаний с фильтрами" />
         </ul>
+        <p className="font-medium text-neutral-900">Роль Architect/System Design — отдельная категория:</p>
+        <p>
+          В Telegram-выборке (proglib_jobs) архитектурных ролей нет вообще — канал заточен под
+          mid/senior IC. На Himalayas и Djinni спрос реальный (Djinni — 40 активных вакансий по
+          keyword «architect», Himalayas — живые remote-позиции у Holocene, Leidos, Caretria).
+          Выделенного API-фильтра нигде нет из коробки — категория реализуется через
+          keyword-поиск (<code className="rounded bg-neutral-100 px-1">architect</code>,{' '}
+          <code className="rounded bg-neutral-100 px-1">staff engineer</code>,{' '}
+          <code className="rounded bg-neutral-100 px-1">principal engineer</code>) поверх
+          существующих источников, не как отдельный источник.
+        </p>
         <p className="font-medium text-neutral-900">Не используем принципиально:</p>
         <ul className="list-disc space-y-1 pl-5">
           <li>hh.ru — заточен под RU-рынок, не международный, и вообще нет.</li>
