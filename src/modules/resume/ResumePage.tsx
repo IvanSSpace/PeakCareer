@@ -69,10 +69,29 @@ export default function ResumePage() {
       <Section title="Кандидат на реюз кода">
         <p>
           Из внешнего ресёрча — сильный кандидат на форк/реюз вместо билда с нуля, стек почти
-          идентичен нашему (React+TS+Tailwind фронт):
+          идентичен нашему (React+TS+Tailwind фронт). Проверили альтернативы отдельно — ближайший
+          конкурент (resume-lm, 312★) на два порядка меньше и на AGPL-3.0 (copyleft, неудобно для
+          закрытого продукта); Resume-Matcher — Apache-2.0. Остаётся лучшим выбором.
         </p>
         <ul className="list-disc space-y-1 pl-5">
-          <LinkItem href="https://github.com/srbhr/Resume-Matcher" label="srbhr/Resume-Matcher — 28.1k★, живой, Next.js+React+TS+Tailwind + FastAPI, мульти-LLM" />
+          <LinkItem href="https://github.com/srbhr/Resume-Matcher" label="srbhr/Resume-Matcher — 28.1k★, живой, Next.js+React+TS+Tailwind + FastAPI, мульти-LLM, Apache-2.0" />
+        </ul>
+      </Section>
+
+      <Section title="Готовый skill вместо билда с нуля">
+        <p>
+          Топ на реестре skills.sh под резюме-тейлоринг — можно поставить и использовать промпты/логику
+          напрямую, не переизобретая:
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <LinkItem
+            href="https://skills.sh/composiohq/awesome-claude-skills/tailored-resume-generator"
+            label="composiohq/awesome-claude-skills@tailored-resume-generator — 8.9K установок, 72.8K★ репо, все security-аудиты пройдены"
+          />
+          <LinkItem
+            href="https://skills.sh/NullSpace-BitCradle/ats-resume-agent"
+            label="ats-resume-agent — маленький (9★), но с полезным «zero fabrication policy»: гардрейл против выдумывания метрик, стоит взять как референс для career-profile-builder/resume-tailor-profile"
+          />
         </ul>
       </Section>
     </div>
