@@ -25,6 +25,8 @@ backend/.pytest_cache
 backend/*.db
 backend/uploads/*
 !backend/uploads/.gitkeep
+backend/tailored/*
+!backend/tailored/.gitkeep
 
 # Editor directories and files
 .vscode/*

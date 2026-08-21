@@ -6,6 +6,7 @@ from sqlmodel import JSON, Column, Field, SQLModel
 
 class ApplicationStatus(str, Enum):
     draft = "draft"
+    generating = "generating"
     ready = "ready"
     applied = "applied"
     rejected = "rejected"
@@ -52,7 +53,8 @@ class Application(SQLModel, table=True):
     vacancy_id: str = Field(foreign_key="vacancy.id")
     resume_id: str = Field(foreign_key="resume.id")
     status: ApplicationStatus = ApplicationStatus.draft
-    # Filled in by hand for now (Claude Code session, no LLM API key yet).
+    # Populated by app/tailoring.py via a `claude -p` CLI subprocess — no
+    # external LLM API key, just the local Claude Code subscription.
     tailored_resume_path: Optional[str] = None
     cover_letter_path: Optional[str] = None
     created_at: str  # ISO datetime

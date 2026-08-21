@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { vacancies, ROLE_ORDER } from '../aggregator/vacancy'
 import VacancyRow from '../aggregator/VacancyRow'
 import { loadResumes, type StoredResume } from '../pipeline/resumeStore'
+import { createApplication, triggerTailoring } from '../../api'
+import type { ReviewItem } from '../pipeline/review/ReviewGalleryPage'
 
 const MAX_SELECTED = 10
 
@@ -12,6 +14,8 @@ export default function SelectPage() {
   const [activeResumeId, setActiveResumeId] = useState<string | null>(null)
   const [roleFilter, setRoleFilter] = useState('все')
   const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [generating, setGenerating] = useState(false)
+  const [genError, setGenError] = useState<string | null>(null)
 
   useEffect(() => {
     const loaded = loadResumes()
@@ -25,6 +29,28 @@ export default function SelectPage() {
   }, [])
 
   const shown = roleFilter === 'все' ? vacancies : vacancies.filter((v) => v.role === roleFilter)
+
+  const activeResume = resumes.find((r) => r.id === activeResumeId) ?? null
+  const canGenerate = selected.size > 0 && !!activeResume?.backendId && !generating
+
+  async function handleGenerate() {
+    if (!activeResume?.backendId) return
+    setGenerating(true)
+    setGenError(null)
+    try {
+      const items: ReviewItem[] = []
+      for (const vacancyId of selected) {
+        const application = await createApplication(vacancyId, activeResume.backendId)
+        await triggerTailoring(application.id)
+        items.push({ vacancyId, applicationId: application.id })
+      }
+      navigate('/pipeline/review', { state: { resumeId: activeResume.id, items } })
+    } catch {
+      setGenError('Не получилось запустить генерацию — бэкенд недоступен?')
+    } finally {
+      setGenerating(false)
+    }
+  }
 
   function toggle(id: string) {
     setSelected((prev) => {
@@ -129,16 +155,22 @@ export default function SelectPage() {
             </p>
           </div>
           <div className="flex-1" />
+          {activeResume && !activeResume.backendId && (
+            <p className="text-xs text-amber-700" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              резюме не синхронизировано с бэком — перезагрузи страницу
+            </p>
+          )}
+          {genError && (
+            <p className="text-xs text-red-600" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              {genError}
+            </p>
+          )}
           <button
-            disabled={selected.size === 0 || !activeResumeId}
-            onClick={() =>
-              navigate('/pipeline/review', {
-                state: { resumeId: activeResumeId, vacancyIds: [...selected] },
-              })
-            }
+            disabled={!canGenerate}
+            onClick={handleGenerate}
             className="shrink-0 rounded-full bg-neutral-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-neutral-700 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500 disabled:hover:bg-neutral-300"
           >
-            Сгенерировать резюме
+            {generating ? 'Запускаю…' : 'Сгенерировать резюме'}
           </button>
         </div>
       </div>

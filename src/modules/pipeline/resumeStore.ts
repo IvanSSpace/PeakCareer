@@ -6,6 +6,7 @@ export type StoredResume = {
   type: string
   uploadedAt: string
   dataUrl: string
+  backendId?: string // set once the file syncs to the FastAPI backend — required to generate tailored resumes
 }
 
 const KEY = 'peakcareer:resumes'

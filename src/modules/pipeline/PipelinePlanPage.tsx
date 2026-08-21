@@ -55,10 +55,12 @@ export default function PipelinePlanPage() {
         <p className="font-medium text-neutral-900">
           Построено: FastAPI (Python) + SQLite, без хостинга пока — гоняем локально
           (<code className="rounded bg-neutral-100 px-1">backend/</code>). Модели Vacancy/Resume/Application,
-          CRUD-роуты, аплоад файлов, 17 тестов зелёные. Проверено вживую на реальных 21 вакансии
-          через seed-скрипт. Фронт пока НЕ подключён — намеренно, чтобы не трогать рабочее без
-          присмотра. tailored_resume_path в модели есть, но пустует — генерация всё ещё ручная,
-          LLM API не подключён (только подписка Claude Code).
+          CRUD-роуты, аплоад файлов, 17 тестов зелёные. Фронт подключён: загрузка резюме дублируется
+          на бэк, /select создаёт реальные отклики и запускает тейлоринг. Тейлоринг — реальный:
+          парсинг PDF/DOCX → структурирование (Haiku) → адаптация под вакансию (Sonnet) → дифф
+          (добавленное зелёным, убранное красным) — через headless-вызов <code className="rounded bg-neutral-100 px-1">claude</code> CLI,
+          без внешнего LLM API (только подписка Claude Code). Результат можно вручную поправить
+          в approve-режиме. PDF-рендер финального резюме — следующий шаг (sub-project C).
         </p>
       </Section>
 

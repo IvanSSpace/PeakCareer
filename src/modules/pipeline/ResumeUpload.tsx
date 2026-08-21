@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { loadResumes, saveResumes, type StoredResume } from './resumeStore'
+import { uploadResumeToBackend } from '../../api'
 
 const MAX_SIZE = 5 * 1024 * 1024 // 5MB
 const ACCEPTED = ['.pdf', '.doc', '.docx']
@@ -109,10 +110,11 @@ export default function ResumeUpload() {
       setError('Файл больше 5 МБ — слишком большой для локального хранения браузера.')
       return
     }
+    const id = crypto.randomUUID()
     const reader = new FileReader()
     reader.onload = () => {
       const entry: StoredResume = {
-        id: crypto.randomUUID(),
+        id,
         name: file.name.replace(/\.[^.]+$/, ''),
         fileName: file.name,
         size: file.size,
@@ -121,6 +123,18 @@ export default function ResumeUpload() {
         dataUrl: reader.result as string,
       }
       commit([entry, ...resumes])
+
+      // Дублируем файл на бэк — без backendId резюме нельзя тейлорить (/select
+      // блокирует кнопку). Бэк недоступен → тихо остаёмся локальными, как раньше.
+      uploadResumeToBackend(file)
+        .then((backendId) => {
+          setResumes((current) => {
+            const updated = current.map((r) => (r.id === id ? { ...r, backendId } : r))
+            saveResumes(updated)
+            return updated
+          })
+        })
+        .catch(() => {})
     }
     reader.readAsDataURL(file)
   }
