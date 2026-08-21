@@ -20,8 +20,10 @@ export default function AggregatorPlanPage() {
           API-фильтра под роль.
         </p>
         <p>
-          Экстракция сейчас — ручная (свой Claude Code, без отдельного API-ключа). Реальный
-          LLM-провайдер и автоматизация — решаем при подходе к публикации.
+          Обновление теперь автоматическое: <code className="rounded bg-neutral-100 px-1">scraper/refresh_vacancies.py</code> —
+          одна команда, скрапит каналы, структурирует новые посты через headless Claude Code CLI
+          (Haiku, без внешнего API-ключа), фильтрует только remote, чистит вакансии старше 21 дня
+          и мёржит с существующими. Запуск вручную, по требованию (без cron пока).
         </p>
         <p className="font-medium text-neutral-900">Что уже видно на реальных данных:</p>
         <ul className="list-disc space-y-1 pl-5">

@@ -28,8 +28,8 @@ def get_vacancy(vacancy_id: str, session: Session = Depends(get_session)):
 @router.post("/import")
 def import_vacancies(vacancies: List[Vacancy], session: Session = Depends(get_session)):
     """Bulk upsert. This is the only way vacancies get into the DB right
-    now — scraped + manually extracted (no LLM API key yet), then pushed
-    here as JSON. See scraper/fetch_telegram.py and data/vacancies.json."""
+    now — scraped and auto-extracted via scraper/refresh_vacancies.py
+    (Claude Code CLI, no external LLM API key), then pushed here as JSON."""
     count = 0
     for v in vacancies:
         existing = session.get(Vacancy, v.id)

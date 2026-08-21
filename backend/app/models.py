@@ -14,9 +14,9 @@ class ApplicationStatus(str, Enum):
 
 
 class Vacancy(SQLModel, table=True):
-    """Mirrors data/vacancies.json. Populated via /vacancies/import — no
-    live scrape+LLM pipeline here yet, extraction stays manual until an
-    LLM API key is decided (only Claude Code subscription for now)."""
+    """Mirrors data/vacancies.json. Populated via /vacancies/import, called
+    by scraper/refresh_vacancies.py after scrape + auto-extract (Claude
+    Code CLI, no external LLM API key)."""
 
     id: str = Field(primary_key=True)  # e.g. "proglib_jobs/1065"
     url: str
@@ -33,6 +33,7 @@ class Vacancy(SQLModel, table=True):
     apply_via: str
     role: str
     language: Optional[str] = None
+    posted_at: Optional[str] = None  # ISO-дата поста в Telegram; None — добавлено вручную, не экспайрится
 
 
 class Resume(SQLModel, table=True):

@@ -28,6 +28,8 @@ backend/uploads/*
 backend/tailored/*
 !backend/tailored/.gitkeep
 
+.claude/scheduled_tasks.lock
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import difflib
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -56,22 +57,29 @@ def extract_text(path: Path) -> str:
     raise ValueError(f"Извлечение текста не поддерживается для {ext} (только .pdf/.docx)")
 
 
+_FENCE_RE = re.compile(r"```(?:json)?\s*\n?(.*?)\n?```", re.DOTALL)
+
+
 def _strip_json_fence(text: str) -> str:
+    # Модель иногда дописывает пояснение прозой ПОСЛЕ закрывающего ``` (особенно на
+    # коротких/skip-ответах) — regex вытаскивает именно содержимое фенса, не весь хвост.
     t = text.strip()
-    if t.startswith("```"):
-        lines = t.split("\n")
-        if lines[0].startswith("```"):
-            lines = lines[1:]
-        if lines and lines[-1].strip() == "```":
-            lines = lines[:-1]
-        t = "\n".join(lines).strip()
-    return t
+    m = _FENCE_RE.search(t)
+    return m.group(1).strip() if m else t
+
+
+def _clean_subprocess_env() -> dict:
+    # Если бэкенд запущен из-под самой Claude Code сессии (её bash-тул), CLAUDECODE/
+    # CLAUDE_CODE_SESSION_ID и т.п. утекают в дочерний процесс, и вложенный `claude -p`
+    # детектит, что он внутри активной сессии, и вместо ответа на промпт иногда
+    # галлюцинирует tool-call на внешнюю сессию вместо чистого ответа. Чистим env.
+    return {k: v for k, v in os.environ.items() if not k.startswith(("CLAUDE", "AI_AGENT"))}
 
 
 def run_claude(prompt: str, model: str) -> dict:
     # --safe-mode (без CLAUDE.md/скиллов/хуков) + --tools "" (без инструментов вообще) +
-    # cwd вне репы — иначе headless-вызов подхватывает контекст проекта как агент и
-    # отвечает на промпт как на продолжение разработки, а не как на чистый текстовый запрос.
+    # cwd вне репы + чистый env — иначе headless-вызов подхватывает контекст проекта
+    # или родительской Claude Code сессии и отвечает не на промпт, а как агент.
     try:
         proc = subprocess.run(
             [
@@ -86,6 +94,7 @@ def run_claude(prompt: str, model: str) -> dict:
             text=True,
             timeout=CLAUDE_TIMEOUT_SECONDS,
             cwd="/tmp",
+            env=_clean_subprocess_env(),
         )
     except subprocess.TimeoutExpired as exc:
         raise ClaudeCallError(f"claude CLI не ответил за {CLAUDE_TIMEOUT_SECONDS}с") from exc

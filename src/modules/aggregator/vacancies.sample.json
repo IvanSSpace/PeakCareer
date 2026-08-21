@@ -1,26 +1,302 @@
 [
   {
-    "id": "proglib_jobs/1065",
-    "url": "https://t.me/proglib_jobs/1065",
-    "source_channel": "proglib_jobs",
-    "title": "SRE-инженер (Команда системы мониторинга HR-платформы)",
-    "company": "Сбербанк",
-    "salary_min": 300000,
-    "salary_max": 400000,
-    "currency": "RUB",
-    "location": "Москва",
-    "remote": false,
-    "category": "devops",
+    "id": "djinni/ai-architect-ascendix",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "AI Architect",
+    "company": "Ascendix Technologies",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "EU",
+    "remote": true,
+    "category": "architect",
     "stack": [
-      "VictoriaMetrics",
-      "Prometheus",
-      "Grafana",
-      "Zabbix",
+      "LLM",
+      "RAG",
+      "AI agents",
+      "backend architecture"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Python",
+    "posted_at": null
+  },
+  {
+    "id": "djinni/platform-sre-architect-climission",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Platform / SRE Architect",
+    "company": "Climission",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Worldwide",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Kubernetes",
+      "MongoDB",
+      "Azure",
+      "multi-tenant SaaS"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": null,
+    "posted_at": null
+  },
+  {
+    "id": "djinni/software-architect-net-globallogic",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Software Architect (.NET)",
+    "company": "GlobalLogic",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "C#",
+      ".NET",
+      "AWS",
+      "Azure",
+      "Docker",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "C#",
+    "posted_at": null
+  },
+  {
+    "id": "djinni/solution-architect-java-react-zentixsoft",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Solution Architect (Java+React)",
+    "company": "ZentixSoft",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Европа/Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "Redis",
+      "ActiveMQ",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Java",
+    "posted_at": null
+  },
+  {
+    "id": "djinni/solution-architect-seedium",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "Solution Architect",
+    "company": "Seedium",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Европа/Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "Next.js",
+      "Kubernetes"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": "Java",
+    "posted_at": null
+  },
+  {
+    "id": "djinni/system-architect-pwc",
+    "url": "https://djinni.co/jobs/keyword-architect/",
+    "source_channel": "djinni.co",
+    "title": "System Architect",
+    "company": "PwC Lviv SDC",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Украина",
+    "remote": true,
+    "category": "architect",
+    "stack": [
+      ".NET",
+      "Java",
+      "Python",
+      "реляционные БД"
+    ],
+    "apply_via": "djinni.co",
+    "role": "Architect",
+    "language": null,
+    "posted_at": null
+  },
+  {
+    "id": "evacuatejobs/6353",
+    "url": "https://t.me/evacuatejobs/6353",
+    "source_channel": "evacuatejobs",
+    "title": "Senior Product Manager, Data Platform",
+    "company": "People AI",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": null,
+    "remote": true,
+    "category": "",
+    "stack": null,
+    "apply_via": "remocate.app",
+    "role": "Data",
+    "language": null,
+    "posted_at": "2026-08-17T11:29:04+00:00"
+  },
+  {
+    "id": "evacuatejobs/6355",
+    "url": "https://t.me/evacuatejobs/6355",
+    "source_channel": "evacuatejobs",
+    "title": "Tech Lead dApp",
+    "company": "1inch",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": null,
+    "remote": true,
+    "category": "web3",
+    "stack": null,
+    "apply_via": "remocate.app",
+    "role": "Architect",
+    "language": null,
+    "posted_at": "2026-08-17T15:30:24+00:00"
+  },
+  {
+    "id": "evacuatejobs/6358",
+    "url": "https://t.me/evacuatejobs/6358",
+    "source_channel": "evacuatejobs",
+    "title": "CMS Product Manager",
+    "company": "Patrianna",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": null,
+    "remote": true,
+    "category": "product",
+    "stack": null,
+    "apply_via": "remocate.app",
+    "role": "Architect",
+    "language": null,
+    "posted_at": "2026-08-18T09:36:29+00:00"
+  },
+  {
+    "id": "evacuatejobs/6360",
+    "url": "https://t.me/evacuatejobs/6360",
+    "source_channel": "evacuatejobs",
+    "title": "Senior Product Owner – Xsolla Money Account",
+    "company": "Xsolla",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": null,
+    "remote": true,
+    "category": "product",
+    "stack": null,
+    "apply_via": "remocate.app",
+    "role": "Architect",
+    "language": null,
+    "posted_at": "2026-08-18T13:44:50+00:00"
+  },
+  {
+    "id": "evacuatejobs/6364",
+    "url": "https://t.me/evacuatejobs/6364",
+    "source_channel": "evacuatejobs",
+    "title": "Python Developer",
+    "company": "Kodland",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "USA",
+    "remote": true,
+    "category": "python",
+    "stack": [
       "Python"
     ],
-    "apply_via": "getmatch.ru",
-    "role": "DevOps",
-    "language": "Python"
+    "apply_via": "remocate.app",
+    "role": "Backend",
+    "language": "Python",
+    "posted_at": "2026-08-19T07:40:40+00:00"
+  },
+  {
+    "id": "evacuatejobs/kodland-python",
+    "url": "https://www.remocate.app/jobs/usa-python-kodland",
+    "source_channel": "evacuatejobs",
+    "title": "USA | Python",
+    "company": "Kodland",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "USA",
+    "remote": true,
+    "category": "python",
+    "stack": null,
+    "needs_jd_fetch": true,
+    "apply_via": "remocate.app",
+    "role": "Backend",
+    "language": "Python",
+    "posted_at": null
+  },
+  {
+    "id": "it_vakansii_jobs/3131",
+    "url": "https://t.me/it_vakansii_jobs/3131",
+    "source_channel": "it_vakansii_jobs",
+    "title": "AI Engineer / Python Developer",
+    "company": "",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "RUB",
+    "location": null,
+    "remote": true,
+    "category": "python",
+    "stack": [
+      "Python",
+      "OpenCV",
+      "CLIP"
+    ],
+    "apply_via": "telegram",
+    "role": "Backend",
+    "language": "Python",
+    "posted_at": "2026-08-11T13:35:13+00:00"
+  },
+  {
+    "id": "it_vakansii_jobs/3141",
+    "url": "https://t.me/it_vakansii_jobs/3141",
+    "source_channel": "it_vakansii_jobs",
+    "title": "Ведущий DS продакт-менеджер",
+    "company": "Авито",
+    "salary_min": null,
+    "salary_max": null,
+    "currency": null,
+    "location": "Москва",
+    "remote": true,
+    "category": "data",
+    "stack": [
+      "ML",
+      "LLM",
+      "Python",
+      "SQL"
+    ],
+    "apply_via": "career.avito.com",
+    "role": "Data",
+    "language": "Python",
+    "posted_at": "2026-08-18T07:08:02+00:00"
   },
   {
     "id": "proglib_jobs/1068",
@@ -44,7 +320,8 @@
     ],
     "apply_via": "getmatch.ru",
     "role": "Mobile",
-    "language": "Kotlin"
+    "language": "Kotlin",
+    "posted_at": "2026-08-04T08:32:06+00:00"
   },
   {
     "id": "proglib_jobs/1069",
@@ -65,7 +342,8 @@
     ],
     "apply_via": "hirehi.ru",
     "role": "Frontend",
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "posted_at": "2026-08-04T18:04:24+00:00"
   },
   {
     "id": "proglib_jobs/1070",
@@ -77,7 +355,7 @@
     "salary_max": null,
     "currency": "RUB",
     "location": "Амстердам",
-    "remote": false,
+    "remote": true,
     "category": "python",
     "stack": [
       "Python",
@@ -90,7 +368,8 @@
     ],
     "apply_via": "hirehi.ru",
     "role": "Backend",
-    "language": "Python"
+    "language": "Python",
+    "posted_at": "2026-08-05T07:02:19+00:00"
   },
   {
     "id": "proglib_jobs/1071",
@@ -102,16 +381,17 @@
     "salary_max": null,
     "currency": "RUB",
     "location": "Москва",
-    "remote": false,
-    "category": "data",
+    "remote": true,
+    "category": "audio",
     "stack": [
       "PyTorch",
       "Deep Learning",
-      "Audio processing"
+      "Audio Processing"
     ],
     "apply_via": "getmatch.ru",
     "role": "Data",
-    "language": "Python"
+    "language": "Python",
+    "posted_at": "2026-08-05T18:02:08+00:00"
   },
   {
     "id": "proglib_jobs/1072",
@@ -136,28 +416,8 @@
     ],
     "apply_via": "getmatch.ru",
     "role": "Backend",
-    "language": "Java"
-  },
-  {
-    "id": "proglib_jobs/1073",
-    "url": "https://t.me/proglib_jobs/1073",
-    "source_channel": "proglib_jobs",
-    "title": "Go-разработчик",
-    "company": "TETRA Security",
-    "salary_min": 3500,
-    "salary_max": null,
-    "currency": "USD",
-    "location": "Астана",
-    "remote": false,
-    "category": "go",
-    "stack": [
-      "Go",
-      "REST API",
-      "PostgreSQL"
-    ],
-    "apply_via": "hh.ru",
-    "role": "Backend",
-    "language": "Go"
+    "language": "Java",
+    "posted_at": "2026-08-06T07:03:13+00:00"
   },
   {
     "id": "proglib_jobs/1074",
@@ -181,27 +441,8 @@
     ],
     "apply_via": "hh.ru",
     "role": "Fullstack",
-    "language": "PHP"
-  },
-  {
-    "id": "proglib_jobs/1075",
-    "url": "https://t.me/proglib_jobs/1075",
-    "source_channel": "proglib_jobs",
-    "title": "QA Engineer (Payments Crypto)",
-    "company": "Exness Group",
-    "salary_min": 4500,
-    "salary_max": null,
-    "currency": "EUR",
-    "location": "Лимассол (relocation support)",
-    "remote": false,
-    "category": "qa",
-    "stack": [
-      "SQL",
-      "REST API"
-    ],
-    "apply_via": "getmatch.ru",
-    "role": "QA",
-    "language": null
+    "language": "PHP",
+    "posted_at": "2026-08-07T07:00:27+00:00"
   },
   {
     "id": "proglib_jobs/1076",
@@ -222,7 +463,8 @@
     ],
     "apply_via": "hh.ru",
     "role": "Backend",
-    "language": "PHP"
+    "language": "PHP",
+    "posted_at": "2026-08-10T11:29:31+00:00"
   },
   {
     "id": "proglib_jobs/1077",
@@ -246,7 +488,8 @@
     ],
     "apply_via": "getmatch.ru",
     "role": "Backend",
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "posted_at": "2026-08-11T06:27:14+00:00"
   },
   {
     "id": "proglib_jobs/1080",
@@ -267,7 +510,8 @@
     ],
     "apply_via": "career.habr.com",
     "role": "Backend",
-    "language": "Java"
+    "language": "Java",
+    "posted_at": "2026-08-11T11:01:58+00:00"
   },
   {
     "id": "proglib_jobs/1081",
@@ -289,7 +533,8 @@
     ],
     "apply_via": "career.habr.com",
     "role": "DevOps",
-    "language": "Go"
+    "language": "Go",
+    "posted_at": "2026-08-11T18:04:28+00:00"
   },
   {
     "id": "proglib_jobs/1084",
@@ -317,161 +562,7 @@
     ],
     "apply_via": "hh.ru",
     "role": "Mobile",
-    "language": "Kotlin"
-  },
-  {
-    "id": "evacuatejobs/kodland-python",
-    "url": "https://www.remocate.app/jobs/usa-python-kodland",
-    "source_channel": "evacuatejobs",
-    "title": "USA | Python",
-    "company": "Kodland",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "USA",
-    "remote": true,
-    "category": "python",
-    "stack": null,
-    "needs_jd_fetch": true,
-    "apply_via": "remocate.app",
-    "role": "Backend",
-    "language": "Python"
-  },
-  {
-    "id": "djinni/solution-architect-seedium",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "Solution Architect",
-    "company": "Seedium",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "Европа/Украина",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      "Java",
-      "Spring Boot",
-      "React",
-      "Next.js",
-      "Kubernetes"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": "Java"
-  },
-  {
-    "id": "djinni/software-architect-net-globallogic",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "Software Architect (.NET)",
-    "company": "GlobalLogic",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "Украина",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      "C#",
-      ".NET",
-      "AWS",
-      "Azure",
-      "Docker",
-      "Kubernetes"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": "C#"
-  },
-  {
-    "id": "djinni/solution-architect-java-react-zentixsoft",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "Solution Architect (Java+React)",
-    "company": "ZentixSoft",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "Европа/Украина",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      "Java",
-      "Spring Boot",
-      "React",
-      "Redis",
-      "ActiveMQ",
-      "Kubernetes"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": "Java"
-  },
-  {
-    "id": "djinni/ai-architect-ascendix",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "AI Architect",
-    "company": "Ascendix Technologies",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "EU",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      "LLM",
-      "RAG",
-      "AI agents",
-      "backend architecture"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": "Python"
-  },
-  {
-    "id": "djinni/platform-sre-architect-climission",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "Platform / SRE Architect",
-    "company": "Climission",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "Worldwide",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      "Kubernetes",
-      "MongoDB",
-      "Azure",
-      "multi-tenant SaaS"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": null
-  },
-  {
-    "id": "djinni/system-architect-pwc",
-    "url": "https://djinni.co/jobs/keyword-architect/",
-    "source_channel": "djinni.co",
-    "title": "System Architect",
-    "company": "PwC Lviv SDC",
-    "salary_min": null,
-    "salary_max": null,
-    "currency": null,
-    "location": "Украина",
-    "remote": true,
-    "category": "architect",
-    "stack": [
-      ".NET",
-      "Java",
-      "Python",
-      "реляционные БД"
-    ],
-    "apply_via": "djinni.co",
-    "role": "Architect",
-    "language": null
+    "language": "Kotlin",
+    "posted_at": "2026-08-14T11:10:15+00:00"
   }
 ]

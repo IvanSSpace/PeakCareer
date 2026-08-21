@@ -16,6 +16,7 @@ export type Vacancy = {
   apply_via: string
   role: string
   language: string | null
+  posted_at: string | null // ISO-дата поста в Telegram; null — добавлено вручную, не экспайрится
 }
 
 export const vacancies = vacanciesRaw as Vacancy[]
