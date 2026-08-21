@@ -60,7 +60,9 @@ export default function PipelinePlanPage() {
           парсинг PDF/DOCX → структурирование (Haiku) → адаптация под вакансию (Sonnet) → дифф
           (добавленное зелёным, убранное красным) — через headless-вызов <code className="rounded bg-neutral-100 px-1">claude</code> CLI,
           без внешнего LLM API (только подписка Claude Code). Результат можно вручную поправить
-          в approve-режиме. PDF-рендер финального резюме — следующий шаг (sub-project C).
+          в approve-режиме. PDF-рендер финального резюме — готов (sub-project C): кнопка
+          "Скачать PDF" в approve-режиме собирает файл прямо в браузере через{' '}
+          <code className="rounded bg-neutral-100 px-1">@react-pdf/renderer</code>, без бэкенда.
         </p>
       </Section>
 

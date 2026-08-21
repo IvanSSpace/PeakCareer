@@ -4,21 +4,8 @@ import { vacancies, formatSalary } from '../../aggregator/vacancy'
 import { loadResumes } from '../resumeStore'
 import { getTailoredResume, editTailoredResume, type TailoredResume } from '../../../api'
 import TailoredDiffView from './TailoredDiffView'
+import { currentPlainText } from './resumeText'
 import type { ReviewState } from './ReviewGalleryPage'
-
-function currentPlainText(resume: TailoredResume) {
-  const keep = (kind: string) => kind !== 'removed'
-  return {
-    summary: resume.summary
-      .filter((s) => keep(s.kind))
-      .map((s) => s.text)
-      .join(''),
-    experience: resume.experience
-      .filter((line) => line.length === 0 || keep(line[0].kind))
-      .map((line) => line.map((s) => s.text).join('')),
-    skills: resume.skills.filter((s) => keep(s.kind)).map((s) => s.text),
-  }
-}
 
 export default function ApproveViewPage() {
   const location = useLocation()
@@ -34,6 +21,7 @@ export default function ApproveViewPage() {
   const [draft, setDraft] = useState({ summary: '', experience: '', skills: '' })
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
+  const [downloading, setDownloading] = useState(false)
 
   const item = state && !Number.isNaN(idx) ? state.items[idx] : null
   const vacancy = useMemo(() => (item ? vacancies.find((v) => v.id === item.vacancyId) ?? null : null), [item])
@@ -73,6 +61,30 @@ export default function ApproveViewPage() {
     setDraft({ summary: plain.summary, experience: plain.experience.join('\n'), skills: plain.skills.join('\n') })
     setSaveError(null)
     setEditing(true)
+  }
+
+  async function handleDownloadPdf() {
+    if (!resume || !vacancy) return
+    setDownloading(true)
+    try {
+      const [{ pdf }, { default: ResumePdfDocument }] = await Promise.all([
+        import('@react-pdf/renderer'),
+        import('./ResumePdfDocument'),
+      ])
+      const plain = currentPlainText(resume)
+      const blob = await pdf(
+        <ResumePdfDocument plain={plain} candidateName={resumeName} vacancyTitle={vacancy.title} company={vacancy.company} />,
+      ).toBlob()
+      const url = URL.createObjectURL(blob)
+      const safeName = `${resumeName} — ${vacancy.title}`.replace(/[/\\?%*:|"<>]/g, '-')
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${safeName}.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
+    } finally {
+      setDownloading(false)
+    }
   }
 
   async function handleSave() {
@@ -151,6 +163,16 @@ export default function ApproveViewPage() {
               className="rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-500 transition hover:border-neutral-400 hover:text-neutral-900"
             >
               Редактировать
+            </button>
+          )}
+          {resume && (
+            <button
+              onClick={handleDownloadPdf}
+              disabled={mode !== 'tailored' || downloading}
+              title={mode !== 'tailored' ? 'PDF доступен только в тейлоренном режиме' : undefined}
+              className="rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-500 transition hover:border-neutral-400 hover:text-neutral-900 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-neutral-200 disabled:hover:text-neutral-500"
+            >
+              {downloading ? 'Готовлю PDF…' : 'Скачать PDF'}
             </button>
           )}
         </div>
