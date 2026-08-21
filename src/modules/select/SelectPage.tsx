@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { vacancies, ROLE_ORDER } from '../aggregator/vacancy'
 import VacancyRow from '../aggregator/VacancyRow'
 import { loadResumes, type StoredResume } from '../pipeline/resumeStore'
@@ -7,6 +7,7 @@ import { loadResumes, type StoredResume } from '../pipeline/resumeStore'
 const MAX_SELECTED = 10
 
 export default function SelectPage() {
+  const navigate = useNavigate()
   const [resumes, setResumes] = useState<StoredResume[]>([])
   const [activeResumeId, setActiveResumeId] = useState<string | null>(null)
   const [roleFilter, setRoleFilter] = useState('все')
@@ -129,10 +130,15 @@ export default function SelectPage() {
           </div>
           <div className="flex-1" />
           <button
-            disabled
-            className="shrink-0 cursor-not-allowed rounded-full bg-neutral-300 px-5 py-2 text-sm font-medium text-neutral-500"
+            disabled={selected.size === 0 || !activeResumeId}
+            onClick={() =>
+              navigate('/pipeline/review', {
+                state: { resumeId: activeResumeId, vacancyIds: [...selected] },
+              })
+            }
+            className="shrink-0 rounded-full bg-neutral-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-neutral-700 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500 disabled:hover:bg-neutral-300"
           >
-            Сгенерировать резюме — скоро
+            Сгенерировать резюме
           </button>
         </div>
       </div>
